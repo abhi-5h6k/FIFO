@@ -84,17 +84,10 @@
  endtask  
   
  task debug_fifo;  
-      begin  
-           $display("----------------------------------------------");  
-           $display("------------------   -----------------------");  
-           $display("----------- SIMULATION RESULT ----------------");  
-           $display("--------------       -------------------");  
-           $display("----------------     ---------------------");  
-           $display("----------------------------------------------");  
+      begin 
            $monitor("TIME = %d, wr = %b, rd = %b, data_in = %h",$time, wr, rd, data_in);  
       end  
  endtask  
- // 11. Self-Checking  
  reg [5:0] waddr, raddr;  
  reg [7:0] mem[64:0];  
  always @ (posedge clk) begin  
